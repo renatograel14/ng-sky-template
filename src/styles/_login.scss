@@ -1,14 +1,13 @@
-#login {
-    width: 50%;
-    min-width: $container-min-width;
-    max-width: $container-max-width;
-    overflow: hidden;
 
-    // border-radius: 10px;
-    margin: 50px auto;
-    -webkit-box-shadow: $container-shadow-box;
-    -moz-box-shadow: $container-shadow-box;
-    box-shadow: $container-shadow-box;
+
+#login {
+
+    // @include rounded-border;
+    @include centerer;
+    @include box-shadow($container-shadow-box);
+
+    width: 450px;
+
 
     .login-header {
         padding: 20px;

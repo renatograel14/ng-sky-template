@@ -1,3 +1,20 @@
+@mixin rounded-border($radius: 10px) {
+    border-radius: $radius;
+}
+
+@mixin centerer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin box-shadow($shadow...) {
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    box-shadow: $shadow;
+}
+
 @mixin input($width: 60%) {
     font-size: $size-font-form;
     width: $width;

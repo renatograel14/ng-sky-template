@@ -3,32 +3,22 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, ChildrenOutletContexts } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule, routedComponents } from './app.routing';
 
-
-const routes: Routes = [
-  { path: '', loadChildren: '#AppModule' },
-  { path: 'login', loadChildren: '#AppModule' },
-  { path: 'pages', loadChildren: 'pages/pages.module#PageModule' },
-];
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    ...routedComponents
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    HttpModule,
-    RouterModule,
-    CommonModule,
-    RouterModule.forChild(routes),
-    BrowserModule
+    AppRoutingModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

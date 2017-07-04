@@ -1,17 +1,16 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { BrowserModule  } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
 
 import { PagesComponent } from './pages.component';
-
-const routes: Routes = [
-    { path: '', loadChildren: '#PagesModule' },
-];
-
-export const routedComponents = [PagesComponent];
+import { PagesRoutingModule, routedComponents } from './pages.routing';
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  declarations: [...routedComponents],
-  exports: [RouterModule],
+    imports: [
+        PagesRoutingModule,
+    ],
+    declarations: [...routedComponents],
+    providers: [/* TODO: Providers go here */],
+    bootstrap: [PagesComponent],
 })
 export class PagesModule { }
