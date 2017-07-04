@@ -1,0 +1,103 @@
+#login {
+    width: 50%;
+    min-width: $container-min-width;
+    max-width: $container-max-width;
+    overflow: hidden;
+
+    // border-radius: 10px;
+    margin: 50px auto;
+    -webkit-box-shadow: $container-shadow-box;
+    -moz-box-shadow: $container-shadow-box;
+    box-shadow: $container-shadow-box;
+
+    .login-header {
+        padding: 20px;
+        text-align: center;
+        background: $bg-header;
+
+        h1 {
+            color: $font-color;
+        }
+    }
+
+    .login-form {
+        background: $bg-form;
+        overflow: hidden;
+        padding: 10px;
+        color: $font-color-secundary;
+
+        .field {
+            overflow: hidden;
+            text-align: center;
+
+            label {
+                width: 25%;
+                max-width: 6em;
+                font-size: $size-font-form;
+                display: inline-block;
+                padding: 10px;
+            }
+
+            input {
+                @include input;
+            }
+        }
+
+        .actions {
+            margin: 20px 0;
+
+            button {
+                font: {
+                    weight: bold;
+                    size: 15px;
+                };
+                display: block;
+                margin: 0 auto;
+                color: $font-color;
+                background: $bg-btn-primary;
+                border: none;
+                padding: 10px 100px;
+                border-radius: 5px;
+                // box-shadow: $btn-inset-shadow, $btn-outset-shadow;
+
+                // transition: background .3s ease;
+                position: relative;
+                overflow: hidden;
+
+                &:after {
+                    visibility: hidden;
+                }
+
+                &:focus:after {
+                    visibility: visible;
+                }
+
+                &:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    width: 120px;
+                    height: 120px;
+                    margin-left: -60px;
+                    margin-top: -60px;
+                    background: lighten($bg-btn-primary, 50%);
+                    border-radius: 100%;
+                    opacity: .3;
+                    transform: scale(0);
+                }
+
+                &:not(:active):after {
+                    animation: ripple 1s ease-in;
+                }
+
+
+                &:focus, &:hover {
+                    outline: none;
+                    background: lighten($bg-btn-primary, 25%);
+                }
+            }
+        }
+    }
+}

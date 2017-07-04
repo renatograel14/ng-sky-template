@@ -1,0 +1,53 @@
+
+#menu {
+    width: 100%;
+    background: $bg-menu;
+
+    .search {
+        @include input($width: auto);
+        @include input-placeholder;
+
+        color: $font-color;
+        border-color: $font-color;
+    }
+
+    ul {
+        width: 50%;
+        display: inline-block;
+        list-style: none;
+        padding: 0 50px;
+
+        &.right {
+            float: right;
+            text-align: right;
+        }
+
+        &.left {
+            float: left;
+            text-align: left;
+        }
+
+        li {
+            display: inline-block;
+
+            a {
+                font: {
+                    weight: bold;
+                    size: 20px;
+                };
+                line-height: 0;
+                display: inline-block;
+                padding: ($heigh-menu / 2) 15px;
+                text-decoration: none;
+                color: $font-color;
+                cursor: pointer;
+
+                &:hover, &:focus {
+                    color: $bg-btn-active;
+                    background: $bg-menu-hover;
+                    outline: none;
+                }
+            }
+        }
+    }
+}

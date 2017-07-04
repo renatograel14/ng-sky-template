@@ -1,0 +1,12 @@
+/*
+    font-family: 'Bellefair', serif;
+    font-family: 'Roboto Slab', serif;
+    font-family: 'Playfair Display', serif;
+    font-family: 'Indie Flower', cursive;
+    font-family: 'Zilla Slab', serif;
+    font-family: 'Roboto Slab', serif;
+*/
+
+$fonts: "Bellefair|Indie+Flower|Playfair+Display|Roboto+Slab|Zilla+Slab|Roboto+Slab";
+
+@import url("https://fonts.googleapis.com/css?family=#{$fonts}");
