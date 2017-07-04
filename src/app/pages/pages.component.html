@@ -1,13 +1,12 @@
 <nav id="menu">
   <ul>
-    <li><a href="#">Lorem.</a></li>
-    <li><a href="#">Alias.</a></li>
-    <li><a href="#">Similique.</a></li>
+    <li><a [routerLink]="['/login']">Login</a></li>
+    <li><a [routerLink]="['/pages']">Pages</a></li>
   </ul>
   <ul class="right">
     <li>
-      <input class="search" type="text" placeholder="_search">
-      <a href="#" class="fa fa-search"></a>
+      <input class="search" type="text" placeholder="_search" [class.search-popup]="searchPopup">
+      <a [routerLink]="['/pages']" class="fa fa-search search-icon" (click)="searchPopup = !searchPopup"></a>
     </li>
   </ul>
 </nav>

@@ -15,15 +15,23 @@
     box-shadow: $shadow;
 }
 
+
 @mixin input($width: 60%) {
     font-size: $size-font-form;
-    width: $width;
+    width: 100%;
     display: inline-block;
     padding: 10px;
     border: none;
     border-bottom: 1px solid $font-color-secundary;
     background: transparent;
     color: $font-color-secundary;
+
+    @include breakpoint($small) {
+        width: $width;
+
+        @include input-placeholder(transparent, 0);
+    }
+
 
     &:focus {
         outline: none;
@@ -32,23 +40,23 @@
     }
 }
 
-@mixin input-placeholder($color: $font-color) {
+@mixin input-placeholder($color: $font-color, $opacity:0.4) {
     &::-webkit-input-placeholder {
-        color: opacify($color, 0.4);
+        color: opacify($color, $opacity);
     }
 
     &::-moz-placeholder {
         /* Firefox 19+ */
-        color: opacify($color, 0.4);
+        color: opacify($color, $opacity);
     }
 
     &:-ms-input-placeholder {
         /* IE 10+ */
-        color: opacify($color, 0.4);
+        color: opacify($color, $opacity);
     }
 
     &:-moz-placeholder {
         /* Firefox 18- */
-        color: opacify($color, 0.4);
+        color: opacify($color, $opacity);
     }
 }

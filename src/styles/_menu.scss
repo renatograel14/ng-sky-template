@@ -1,4 +1,3 @@
-
 #menu {
     width: 100%;
     background: $bg-menu;
@@ -7,8 +6,24 @@
         @include input($width: auto);
         @include input-placeholder;
 
+        display: none;
+
+        @include breakpoint($medium) {
+            display: inline-block;
+        }
+
         color: $font-color;
         border-color: $font-color;
+    }
+
+    .search-popup {
+        @include breakpoint($small, $medium) {
+            display: inline-block;
+            background-color: $bg-menu;
+            position: absolute;
+            top: 40px;
+            right: 10px;
+        }
     }
 
     ul {
@@ -16,6 +31,7 @@
         display: inline-block;
         list-style: none;
         padding: 0 50px;
+
 
         &.right {
             float: right;

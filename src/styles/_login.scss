@@ -1,12 +1,13 @@
-
-
 #login {
-
     // @include rounded-border;
     @include centerer;
     @include box-shadow($container-shadow-box);
 
-    width: 450px;
+    width: 90%;
+
+    @include breakpoint($small) {
+        width: 420px;
+    }
 
 
     .login-header {
@@ -22,7 +23,7 @@
     .login-form {
         background: $bg-form;
         overflow: hidden;
-        padding: 10px;
+        padding: 20px;
         color: $font-color-secundary;
 
         .field {
@@ -33,8 +34,12 @@
                 width: 25%;
                 max-width: 6em;
                 font-size: $size-font-form;
-                display: inline-block;
                 padding: 10px;
+                display: none;
+
+                @include breakpoint($small) {
+                    display: inline-block;
+                }
             }
 
             input {
@@ -43,7 +48,7 @@
         }
 
         .actions {
-            margin: 20px 0;
+            margin: 30px 0;
 
             button {
                 font: {
@@ -57,6 +62,7 @@
                 border: none;
                 padding: 10px 100px;
                 border-radius: 5px;
+
                 // box-shadow: $btn-inset-shadow, $btn-outset-shadow;
 
                 // transition: background .3s ease;
@@ -90,7 +96,6 @@
                 &:not(:active):after {
                     animation: ripple 1s ease-in;
                 }
-
 
                 &:focus, &:hover {
                     outline: none;
