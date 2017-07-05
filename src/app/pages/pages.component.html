@@ -5,7 +5,7 @@
   </ul>
   <ul class="right">
     <li>
-      <input class="search" type="text" placeholder="_search" [class.search-popup]="searchPopup">
+      <input class="search" type="text" placeholder="_search" [class.search-popup]="searchPopup" (mouseleave)="searchPopup = false">
       <a [routerLink]="['/pages']" class="fa fa-search search-icon" (click)="searchPopup = !searchPopup"></a>
     </li>
   </ul>

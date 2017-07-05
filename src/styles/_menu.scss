@@ -12,17 +12,27 @@
             display: inline-block;
         }
 
+
         color: $font-color;
         border-color: $font-color;
+    }
+
+    .search-icon {
+        display: inline-block;
+
+        @include breakpoint($medium) {
+            display: none;
+        }
     }
 
     .search-popup {
         @include breakpoint($small, $medium) {
             display: inline-block;
             background-color: $bg-menu;
+            border: 10px solid $bg-menu;
             position: absolute;
-            top: 40px;
-            right: 10px;
+            top: $heigh-menu;
+            right: 0;
         }
     }
 
@@ -31,7 +41,6 @@
         display: inline-block;
         list-style: none;
         padding: 0 50px;
-
 
         &.right {
             float: right;

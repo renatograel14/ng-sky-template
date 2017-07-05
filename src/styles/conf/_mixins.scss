@@ -35,7 +35,6 @@
 
     &:focus {
         outline: none;
-        background: transparentize(lighten($font-color-secundary, 50%), 0.7);
         opacity: .7;
     }
 }
