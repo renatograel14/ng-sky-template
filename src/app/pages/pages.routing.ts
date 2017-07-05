@@ -6,7 +6,9 @@ import { PagesComponent } from './pages.component';
 
 const routes: Routes = [
   {
-    path: '', component: PagesComponent, children: [
+    path: '', 
+    component: PagesComponent, 
+    children: [
       { path: '', pathMatch: 'full', redirectTo: 'main' },
       { path: 'main', component: MainContentComponent },
     ]

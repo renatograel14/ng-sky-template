@@ -1,17 +1,11 @@
 #menu {
     width: 100%;
     background: $bg-menu;
+    overflow: hidden;
 
     .search {
         @include input($width: auto);
         @include input-placeholder;
-
-        display: none;
-
-        @include breakpoint($medium) {
-            display: inline-block;
-        }
-
 
         color: $font-color;
         border-color: $font-color;
@@ -25,22 +19,36 @@
         }
     }
 
-    .search-popup {
-        @include breakpoint($small, $medium) {
-            display: inline-block;
-            background-color: $bg-menu;
-            border: 10px solid $bg-menu;
-            position: absolute;
-            top: $heigh-menu;
-            right: 0;
+    .menu-icon {
+        display: inline-block;
+
+        @include breakpoint($medium) {
+            display: none;
         }
+    }
+
+    .menu-responsive {
+        display: none;
+
+        @include breakpoint($medium) {
+            display: inline-block;
+        }
+    }
+
+    .search-popup {
+        display: inline-block;
+        background-color: $bg-menu;
+        border: 10px solid $bg-menu;
+        position: absolute;
+        top: $heigh-menu;
+        right: 0;
     }
 
     ul {
         width: 50%;
         display: inline-block;
-        list-style: none;
-        padding: 0 50px;
+        list-style-type: none;
+        padding: 0 30px;
 
         &.right {
             float: right;
@@ -48,8 +56,19 @@
         }
 
         &.left {
-            float: left;
             text-align: left;
+
+            li {
+                display: block;
+            }
+
+            @include breakpoint($medium) {
+                float: left;
+
+                li {
+                    display: inline-block;
+                }
+            }
         }
 
         li {
@@ -67,7 +86,7 @@
                 color: $font-color;
                 cursor: pointer;
 
-                &:hover, &:focus {
+                &:hover, &:active {
                     color: $bg-btn-active;
                     background: $bg-menu-hover;
                     outline: none;

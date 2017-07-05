@@ -7,6 +7,7 @@ import { RouterModule, Routes, ChildrenOutletContexts } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule, routedComponents } from './app.routing';
+import { LoaderService } from "app/services/loader.service";
 
 
 
@@ -19,6 +20,7 @@ import { AppRoutingModule, routedComponents } from './app.routing';
     BrowserAnimationsModule,
     AppRoutingModule
   ],
+  providers: [LoaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
