@@ -11,12 +11,18 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
     constructor(private _router: Router, private _loader: LoaderService) { }
 
-    signin() {
+    enter() {
         this._loader.show();
         setTimeout(() => {
             this._loader.hide();
             this._router.navigate(['/pages']);
-        }, 2000);
+        }, 1500);
+    }
+
+    signin() {
+        setTimeout(()=>{
+            this.enter();
+        },500);
     }
 
     ngOnInit() { }

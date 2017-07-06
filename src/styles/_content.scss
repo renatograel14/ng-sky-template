@@ -34,19 +34,16 @@ article {
     .author {
         margin-top: gutter() * 2;
 
-        // background: susy-svg-grid();
-
-        
-
         img, p {
-            vertical-align: top;
+            vertical-align: middle;
             display: inline-block;
             margin-right: gutter() / 2;
+            padding: gutter();
         }
 
         img {
-            @include box-shadow(#666 0 2px 1px);
             @include border-radius(50%);
+
             display: block;
             margin: 0 auto;
 
@@ -57,14 +54,13 @@ article {
         }
 
         p {
-            padding: gutter();
             @include breakpoint($small) {
                 padding: 0;
                 width: span(6);
             }
         }
 
-        .title{
+        .title {
             display: block;
             margin: 0 15px 15px 0;
             font-size: 150%;

@@ -26,8 +26,8 @@
     background: transparent;
     border-radius: 0;
 
-    @include shadow-box(none);
-
+    // @include shadow-box(none);
+    @include box-shadow(none);
     color: $font-color-secundary;
 
     @include breakpoint($small) {
@@ -39,7 +39,6 @@
 
     &:focus {
         outline: none;
-        opacity: .7;
     }
 }
 
