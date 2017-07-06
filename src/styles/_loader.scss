@@ -16,7 +16,7 @@ $dot-size: 20px;
     animation: fx $animation-speed ease infinite $delay;
 }
 
-#preloader {
+loader {
     display: none;
     background-color: transparentize($bg-menu, 0.5);
     top: 0;
@@ -26,9 +26,7 @@ $dot-size: 20px;
     width: 100%;
 }
 
-.loader {
-// overflow: hidden;
-
+.dots {
     @include centerer;
 }
 

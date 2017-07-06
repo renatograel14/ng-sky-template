@@ -7,8 +7,7 @@ import { RouterModule, Routes, ChildrenOutletContexts } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule, routedComponents } from './app.routing';
-import { LoaderService } from "app/services/loader.service";
-
+import {ThemeModule} from './theme/theme.module'
 
 
 @NgModule({
@@ -18,9 +17,10 @@ import { LoaderService } from "app/services/loader.service";
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ThemeModule.forRoot()
   ],
-  providers: [LoaderService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

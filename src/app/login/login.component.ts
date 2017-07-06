@@ -1,4 +1,4 @@
-import { LoaderService } from '../services/loader.service';
+import { LoaderService } from '../theme/components/loader';
 
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
