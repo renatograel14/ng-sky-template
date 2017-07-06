@@ -1,6 +1,7 @@
 @import "~normalize.scss/normalize.scss";
-@import "styles/susy";
-@import "styles/breakpoint";
+@import "styles/lib/susy";
+@import "styles/lib/breakpoint";
+@import "styles/lib/compass";
 
 @import "styles/themes/sky";
 @import "styles/conf/conf";
@@ -9,3 +10,4 @@
 @import "menu";
 @import "login";
 @import "loader";
+@import "content";

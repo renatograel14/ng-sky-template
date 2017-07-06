@@ -1,7 +1,7 @@
 #login {
     // @include rounded-border;
     @include centerer;
-    @include box-shadow($container-shadow-box);
+    @include shadow-box($container-shadow-box);
 
     width: 90%;
 
@@ -63,7 +63,7 @@
                 padding: 10px 100px;
                 border-radius: 5px;
 
-                // box-shadow: $btn-inset-shadow, $btn-outset-shadow;
+                // shadow-box: $btn-inset-shadow, $btn-outset-shadow;
 
                 // transition: background .3s ease;
                 position: relative;

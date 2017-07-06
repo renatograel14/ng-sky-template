@@ -12,3 +12,13 @@ body {
     background-size: cover;
 }
 
+a.link {
+    color: darken($bg-menu, 75%);
+    text-decoration: none;
+
+    &:hover, &:focus {
+        color: $bg-menu;
+    }
+
+}
+

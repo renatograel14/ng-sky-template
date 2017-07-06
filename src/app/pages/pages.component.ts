@@ -24,5 +24,6 @@ export class PagesComponent implements OnInit {
 
 
     ngOnInit() {
+        window.scrollTo(0,0);
     }
 }

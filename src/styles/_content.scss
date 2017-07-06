@@ -1,0 +1,125 @@
+.cover {
+    background: url(http://lorempixel.com/900/200/abstract/);
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+    padding: gutter() * 3;
+
+    h1 {
+        @include text-shadow(#333 0 1px 1px);
+
+        color: white;
+        font: {
+            weight: bold;
+            size: 40px;
+        };
+    }
+}
+
+article {
+    margin: gutter() / 2;
+    width: span(8);
+    background-color: transparentize($bg-form, 0.3);
+    padding: gutter() (3 * gutter());
+
+    p {
+        color: darken($bg-menu, 25%);
+        font-size: 125%;
+
+        @include breakpoint($medium) {
+            font-size: 125%;
+        }
+    }
+
+    .author {
+        margin-top: gutter() * 2;
+
+        // background: susy-svg-grid();
+
+        
+
+        img, p {
+            vertical-align: top;
+            display: inline-block;
+            margin-right: gutter() / 2;
+        }
+
+        img {
+            @include box-shadow(#666 0 2px 1px);
+            @include border-radius(50%);
+            display: block;
+            margin: 0 auto;
+
+            @include breakpoint($small) {
+                display: inline-block;
+                width: span(2);
+            }
+        }
+
+        p {
+            padding: gutter();
+            @include breakpoint($small) {
+                padding: 0;
+                width: span(6);
+            }
+        }
+
+        .title{
+            display: block;
+            margin: 0 15px 15px 0;
+            font-size: 150%;
+            font-style: italic;
+        }
+    }
+}
+
+.teasers {
+    border: none;
+    outline: none;
+
+    // background: susy-svg-grid(); debug
+    overflow: hidden;
+
+    .teaser {
+        margin: gutter() / 2;
+        background-color: transparentize($bg-form, 0.3);
+        height: $heigh-menu * 3;
+        padding: gutter();
+        overflow: hidden;
+
+        p {
+            color: darken($bg-menu, 25%);
+            font-size: 125%;
+
+            @include breakpoint($medium) {
+                font-size: 125%;
+            }
+        }
+
+        @include breakpoint($small) {
+            width: span(4);
+            float: left;
+        }
+
+
+        @include breakpoint($medium) {
+            width: span(2);
+            float: left;
+        }
+    }
+}
+
+@for $col-count from 2 to 4 {
+    p.cols-#{$col-count} {
+        @include column-count(1);
+
+        @include breakpoint($small) {
+            @include column-count($col-count - 1);
+        }
+
+
+        @include breakpoint($medium) {
+            @include column-count($col-count);
+        }
+    }
+}

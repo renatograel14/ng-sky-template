@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 
 export class MainContentComponent implements OnInit {
     constructor() { }
-
-    ngOnInit() { }
+    user;
+    ngOnInit() {
+        this.user = Math.min(Math.random() * 100, 29);
+        this.user = Math.floor(this.user);
+     }
 }

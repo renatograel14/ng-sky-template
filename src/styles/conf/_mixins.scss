@@ -9,7 +9,7 @@
     transform: translate(-50%, -50%);
 }
 
-@mixin box-shadow($shadow...) {
+@mixin shadow-box($shadow...) {
     -webkit-box-shadow: $shadow;
     -moz-box-shadow: $shadow;
     box-shadow: $shadow;
@@ -24,6 +24,10 @@
     border: none;
     border-bottom: 1px solid $font-color-secundary;
     background: transparent;
+    border-radius: 0;
+
+    @include shadow-box(none);
+
     color: $font-color-secundary;
 
     @include breakpoint($small) {

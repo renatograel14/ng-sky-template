@@ -1,12 +1,14 @@
 <nav id="menu" (mouseleave)="searchShow = false; menuShow=false">
-  <ul class="left" [class.showMenu]="menuShow">
+  <ul class="left" [class.menu-shown]="menuShow">
     <li><a class="fa fa-bars menu-icon" (click)="toggleMenu()"></a></li>
     <li><a [class.menu-responsive]='!menuShow' [routerLink]="['/login']">Login</a></li>
-    <li><a [class.menu-responsive]='!menuShow' [routerLink]="['/pages']">Pages</a></li>
+    <li><a [class.menu-responsive]='!menuShow' [routerLink]="['/pages/main']">Article</a></li>
   </ul>
   <ul class="right">
     <li>
       <input #searchInput class="search menu-responsive" type="text" placeholder="_search" [class.search-popup]="searchShow" (keyup.enter)="searchShow = false">
+      <a class="fa fa-search menu-responsive"></a>
+
     </li>
     <li>
       <a class="fa fa-search search-icon" (click)="toggleSearch()"></a>

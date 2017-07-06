@@ -34,6 +34,7 @@
     "@types/node": "~6.0.60",
     "breakpoint-sass": "^2.7.1",
     "codelyzer": "~3.0.1",
+    "compass-sass-mixins": "^0.12.7",
     "font-awesome": "^4.7.0",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",

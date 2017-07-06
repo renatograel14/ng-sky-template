@@ -35,7 +35,12 @@
         }
     }
 
+    .menu-shown {
+        width: 100%;
+    }
+
     .search-popup {
+        width: 100%;
         display: inline-block;
         background-color: $bg-menu;
         border: 10px solid $bg-menu;
@@ -49,6 +54,7 @@
         display: inline-block;
         list-style-type: none;
         padding: 0 30px;
+        transition: .5s ease-in;
 
         &.right {
             float: right;
@@ -56,13 +62,16 @@
         }
 
         &.left {
+            background: $bg-menu;
             text-align: left;
+            position: absolute;
 
             li {
                 display: block;
             }
 
             @include breakpoint($medium) {
+                position: initial;
                 float: left;
 
                 li {
