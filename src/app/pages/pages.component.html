@@ -1,9 +1,9 @@
 <nav id="menu" (mouseleave)="searchShow = false; menuShow=false">
   <ul class="left" [class.menu-shown]="menuShow">
     <li><a class="fa fa-bars menu-icon" (click)="toggleMenu()"></a></li>
-    <li><a [class.menu-responsive]='!menuShow' [routerLink]="['/login']">Login</a></li>
-    <li><a [class.menu-responsive]='!menuShow' [routerLink]="['/pages/main']">Article</a></li>
-    <li><a [class.menu-responsive]='!menuShow' [routerLink]="['/pages/form']">Form</a></li>
+    <li><a (click)="menuShow=false" [class.menu-responsive]='!menuShow' [routerLink]="['/login']">Login</a></li>
+    <li><a (click)="menuShow=false" [class.menu-responsive]='!menuShow' [routerLink]="['/pages/main']">Article</a></li>
+    <li><a (click)="menuShow=false" [class.menu-responsive]='!menuShow' [routerLink]="['/pages/form']">Form</a></li>
   </ul>
   <ul class="right">
     <li>

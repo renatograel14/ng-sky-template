@@ -1,0 +1,115 @@
+.field {
+    overflow: hidden;
+    text-align: center;
+
+    label {
+        width: 25%;
+        max-width: 6em;
+        font-size: $size-font-form;
+        padding: 10px;
+        display: none;
+
+        @include breakpoint($small) {
+            display: inline-block;
+        }
+    }
+
+    input {
+        @include input;
+    }
+}
+
+.field-block {
+    @extend .field;
+
+    margin: gutter() / 2 0;
+    text-align: left;
+
+    label {
+        width: span(8);
+        padding: 0;
+        display: none;
+
+        @include breakpoint($small) {
+            display: block;
+        }
+    }
+
+    input {
+        @include input(100%);
+        display: block;
+    }
+}
+
+.actions {
+    margin: 30px 0;
+    text-align: right;
+}
+
+.btn {
+    font: {
+        weight: bold;
+        size: 15px;
+    };
+    color: $font-color;
+    background: $bg-btn-primary;
+    border: none;
+    padding: 10px gutter() * 3;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+
+    &:after {
+        visibility: hidden;
+    }
+
+    &:focus:after {
+        visibility: visible;
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 120px;
+        height: 120px;
+        margin-left: -60px;
+        margin-top: -60px;
+        background: lighten($bg-btn-primary, 50%);
+        border-radius: 100%;
+        opacity: .3;
+        transform: scale(0);
+    }
+
+    &:not(:active):after {
+        animation: ripple 1s ease-in;
+    }
+
+    &:focus, &:hover {
+        outline: none;
+        background: lighten($bg-btn-primary, 25%);
+    }
+}
+
+.btn-bare {
+    @extend .btn;
+
+    color: $bg-btn-primary;
+    background: transparent;
+
+    &:focus, &:hover {
+        background: transparent;
+        outline: none;
+        color: lighten($bg-btn-primary, 25%);
+    }
+}
+
+.btn-main {
+    @extend .btn;
+
+    display: block;
+    padding: 10px 100px;
+    margin: 0 auto;
+}

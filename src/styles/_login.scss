@@ -20,86 +20,9 @@
     }
 
     .login-form {
-        background: $bg-form;
+        background: transparentize($bg-form, 0.3);
         overflow: hidden;
         padding: 20px;
         color: $font-color-secundary;
-
-        .field {
-            overflow: hidden;
-            text-align: center;
-
-            label {
-                width: 25%;
-                max-width: 6em;
-                font-size: $size-font-form;
-                padding: 10px;
-                display: none;
-
-                @include breakpoint($small) {
-                    display: inline-block;
-                }
-            }
-
-            input {
-                @include input;
-            }
-        }
-    }
-}
-
-.actions {
-    margin: 30px 0;
-
-    button {
-
-        font: {
-            weight: bold;
-            size: 15px;
-        };
-        
-        display: block;
-        margin: 0 auto;
-        color: $font-color;
-        background: $bg-btn-primary;
-        border: none;
-        padding: 10px 100px;
-        border-radius: 5px;
-
-        position: relative;
-        overflow: hidden;
-
-        &:after {
-            visibility: hidden;
-        }
-
-        &:focus:after {
-            visibility: visible;
-        }
-
-        &:after {
-            content: '';
-            display: block;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            width: 120px;
-            height: 120px;
-            margin-left: -60px;
-            margin-top: -60px;
-            background: lighten($bg-btn-primary, 50%);
-            border-radius: 100%;
-            opacity: .3;
-            transform: scale(0);
-        }
-
-        &:not(:active):after {
-            animation: ripple 1s ease-in;
-        }
-
-        &:focus, &:hover {
-            outline: none;
-            background: lighten($bg-btn-primary, 25%);
-        }
     }
 }

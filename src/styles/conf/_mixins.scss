@@ -38,6 +38,7 @@
 
 
     &:focus {
+        @include box-shadow(transparentize(#eee, .9) 1px 1px 1px inset);
         outline: none;
     }
 }

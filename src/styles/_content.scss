@@ -31,6 +31,21 @@ article {
         }
     }
 
+    @for $col-count from 2 to 4 {
+        p.cols-#{$col-count} {
+            @include column-count(1);
+
+            @include breakpoint($small) {
+                @include column-count($col-count - 1);
+            }
+
+
+            @include breakpoint($medium) {
+                @include column-count($col-count);
+            }
+        }
+    }
+
     .author {
         margin-top: gutter() * 2;
 
@@ -105,17 +120,21 @@ article {
     }
 }
 
-@for $col-count from 2 to 4 {
-    p.cols-#{$col-count} {
-        @include column-count(1);
+.card {
+    @include box-shadow(#333 1px 1px 1px 1px);
 
-        @include breakpoint($small) {
-            @include column-count($col-count - 1);
-        }
+    margin: $heigh-menu / 2 auto;
+    width: span(7);
 
+    .card-title {
+        padding: $heigh-menu / 2;        
+        color: $font-color;
+        background: $bg-menu;        
+    }
 
-        @include breakpoint($medium) {
-            @include column-count($col-count);
-        }
+    .card-content {
+        padding: $heigh-menu / 2;
+        color: $bg-menu;
+        background: transparentize($bg-form, 0.3);
     }
 }
