@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule  } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 
 
@@ -10,9 +11,10 @@ import { PagesRoutingModule, routedComponents } from './pages.routing';
 @NgModule({
     imports: [
         PagesRoutingModule,
+        FormsModule,
+        ReactiveFormsModule
     ],
     declarations: [...routedComponents],
-    providers: [/* TODO: Providers go here */],
     bootstrap: [PagesComponent],
 })
 export class PagesModule { }
