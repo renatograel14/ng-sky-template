@@ -6,6 +6,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "deploy-ngh": "ng build --prod --base-href=https://renatograel14.github.io/ng-sky-template/ && ngh",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

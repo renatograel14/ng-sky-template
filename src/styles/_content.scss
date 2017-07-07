@@ -1,6 +1,10 @@
 .cover {
-    background: url(http://lorempixel.com/900/200/abstract/);
-    background-size: cover;
+    background: $bg-cover;
+
+    @include breakpoint($medium){
+        background-attachment: fixed;
+    }
+
     height: 200px;
     width: 100%;
     padding: gutter() * 3;
@@ -14,6 +18,10 @@
             size: 40px;
         };
     }
+}
+
+.cover-form {
+    @extend .cover;
 }
 
 article {
@@ -123,13 +131,19 @@ article {
 .card {
     @include box-shadow(#333 1px 1px 1px 1px);
 
-    margin: $heigh-menu / 2 auto;
+    margin: ($heigh-menu / 2) auto;
     width: span(7);
 
+    @include breakpoint($medium) {
+        width: span(5);
+    }
+
+
     .card-title {
-        padding: $heigh-menu / 2;        
+        font-size: 150%;
+        padding: $heigh-menu / 2;
         color: $font-color;
-        background: $bg-menu;        
+        background: $bg-menu;
     }
 
     .card-content {
